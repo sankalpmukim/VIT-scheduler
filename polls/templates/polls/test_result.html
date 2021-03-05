@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download calendar</title>
+</head>
+
+<body>
+    <form action="{% url 'polls:download' filepath %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Download</button>
+    </form>
+    <form action="{% url 'polls:form' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Go again!</button>
+    </form>
+</body>
+
+</html>

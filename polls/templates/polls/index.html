@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>index page</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+    </head>
+    <body>
+        <!-- <h2>5 random questions</h2>
+        <table>
+            {% if random_question_list %}
+            <tr>
+                <th>Question</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+            {% for question in random_question_list %}
+            <tr>
+                <td>
+                    <a href="{% url 'polls:detail' question.pk %}">
+                        {{ question }}</a
+                    >
+                </td>
+                <td>{{ question.pub_date.date }}</td>
+                <td>{{question.pub_date.time}}</td>
+            </tr>
+            {% endfor %} {%endif%}
+        </table> -->
+        <h2>The 5 latest polls:</h2>
+        <table>
+            {% if latest_question_list %}
+            <tr>
+                <th>Question</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+            {% for question in latest_question_list %}
+            <tr>
+                <td>
+                    <a href="{% url 'polls:detail' question.pk %}">
+                        {{ question }}</a
+                    >
+                </td>
+                <td>{{ question.pub_date.date }}</td>
+                <td>{{question.pub_date.time}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>No polls are available.</p>
+        {% endif %}
+    </body>
+</html>

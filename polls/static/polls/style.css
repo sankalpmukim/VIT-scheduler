@@ -1,0 +1,20 @@
+body {
+    background: black;
+}
+a {
+    color: rgb(13, 207, 13);
+}
+h1,
+h2,
+th {
+    color: khaki;
+}
+td {
+    color: hotpink;
+}
+li {
+    color: rgb(13, 207, 13);
+}
+label {
+    color: peachpuff;
+}
