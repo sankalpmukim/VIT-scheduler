@@ -73,14 +73,14 @@ def build_event_duration(summary, description, start, duration, location,
 # cal.add_component(build_event_duration('this is summary', 'this is description', datetime(
 #     2021, 2, 22, 8, 0, 0), 1, 'location', 'daily', datetime(2021, 7, 1, 0, 0, 0)))
 
-# 
+#
 def generate_calendar(whole_site_data: str):
     cal = Calendar()
     cal.add('profid', 'abcd')
     cal.add('version', '4.0.7')
     cal.add('x-wr-timezone', 'Asia/Kolkata')
     cal.add('x-wr-calname', 'testCalendar')
-    slotfile = open('.\\polls\\slotinfofile.json', 'r')
+    slotfile = open('./polls/slotinfofile.json', 'r')
     slotinfo = json.load(slotfile)
     relevantData, reg_no = get_relevant_data(whole_site_data)
     print(reg_no)
@@ -98,8 +98,8 @@ def generate_calendar(whole_site_data: str):
                 event = build_event_duration(summary, description, datetime(
                     year, month, clas[1], clas[0][0], clas[0][1]), duration, location, freq_of_recurrence='weekly', until=until)
                 cal.add_component(event)
-    if os.path.exists('timetable.ics'):
-        os.remove('timetable.ics')
-    with open('timetable.ics', 'wb') as ics:
+    if os.path.exists(reg_no+'.ics'):
+        os.remove(reg_no+'.ics')
+    with open(reg_no+'.ics', 'wb') as ics:
         ics.write(cal.to_ical())
     print('calendar generation complete')

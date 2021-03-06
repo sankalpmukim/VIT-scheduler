@@ -62,18 +62,18 @@ def test_form(request):
 
 
 def test_result(request):
-    if os.path.exists("timetable.ics"):
-        os.remove("timetable.ics")
-        print('file removed succesfully')
     calendar_name = generate_calendar(repr(request.POST['message']))
+    if os.path.exists(calendar_name+".ics"):
+        os.remove(calendar_name+".ics")
+        print('file removed succesfully')
     return render(request, 'polls/test_result.html',{
-        'filepath':'timetable.ics'
+        'filepath':calendar_name+'.ics'
     })
     # return HttpResponse(f"the string received is {repr(request.POST['message'])}")
 
 def download_file(request,filepath):
-    fl_path = 'timetable.ics'
-    filename = fl_path
+    fl_path = f'timetables/{filepath}'
+    filename = filepath
 
     fl = open(fl_path, 'r')
     mime_type, _ = mimetypes.guess_type(fl_path)
