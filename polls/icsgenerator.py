@@ -103,3 +103,4 @@ def generate_calendar(whole_site_data: str):
     with open(reg_no+'.ics', 'wb') as ics:
         ics.write(cal.to_ical())
     print('calendar generation complete')
+    return (reg_no+'.ics')

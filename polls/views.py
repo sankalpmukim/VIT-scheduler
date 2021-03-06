@@ -67,12 +67,12 @@ def test_result(request):
         os.remove(calendar_name+".ics")
         print('file removed succesfully')
     return render(request, 'polls/test_result.html',{
-        'filepath':calendar_name+'.ics'
+        'filepath':calendar_name
     })
     # return HttpResponse(f"the string received is {repr(request.POST['message'])}")
 
 def download_file(request,filepath):
-    fl_path = f'timetables/{filepath}'
+    fl_path = filepath
     filename = filepath
 
     fl = open(fl_path, 'r')
