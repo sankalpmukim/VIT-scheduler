@@ -8,6 +8,13 @@
     <title>Form test page</title>
 </head>
 <body>
+    <ol>
+        <li>Open timetable on VTOP(open only on Chrome/ Opera/ Edge)</li>
+        <li>Click anywhere on the webpage.</li>
+        <li>Do Ctrl+A, Ctrl+C</li>
+        <li>Ctrl+V in the textbox below.</li>
+        <li>Click Submit</li>
+    </ol>
     <form action="{% url 'polls:result' %}" method="post">
         {% csrf_token %}
         <label for="id">Paste VIT Timetable text here:&nbsp;&nbsp;&nbsp;</label>
