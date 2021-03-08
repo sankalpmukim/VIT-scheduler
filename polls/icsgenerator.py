@@ -97,7 +97,8 @@ def generate_calendar(whole_site_data: str):
             for clas in slotinfo[slot]:
                 event = build_event_duration(summary, description, datetime(
                     year, month, clas[1], clas[0][0], clas[0][1]), duration, location, freq_of_recurrence='weekly', until=until)
-                cal.add_component(event)
+                if not('roject' in summary):
+                    cal.add_component(event)
     if os.path.exists(reg_no+'.ics'):
         os.remove(reg_no+'.ics')
     with open(reg_no+'.ics', 'wb') as ics:
