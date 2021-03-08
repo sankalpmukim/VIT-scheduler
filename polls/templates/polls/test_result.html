@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <h1>VIT-Scheduler</h1>
     <form action="{% url 'polls:download' filepath %}" method="post">
         {% csrf_token %}
         <button type="submit">Download</button>
