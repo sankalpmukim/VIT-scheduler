@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="shortcut icon" href="{% static 'favicon.ico' %}" />
     <title>Form test page</title>
 </head>
+
 <body>
     <h1>VIT-Scheduler</h1>
     <ol>
@@ -21,9 +23,11 @@
         {% csrf_token %}
         <label for="id">Paste VIT Timetable text here:&nbsp;&nbsp;&nbsp;</label><br><br>
         <textarea name="message" id="id" cols="100" rows="40"></textarea>
+        <br><br>
         <input type="submit" value="submit" />
     </form>
     <p><strong>Email:</strong>sankalpmukim@gmail.com</p>
     <p><strong>GitHub:</strong><a href="https://github.com/sankalpmukim">github.com/sankalpmukim</a></p>
 </body>
+
 </html>
