@@ -22,7 +22,7 @@
     <form action="{% url 'polls:result' %}" method="post">
         {% csrf_token %}
         <label for="id">Paste VIT Timetable text here:&nbsp;&nbsp;&nbsp;</label><br><br>
-        <textarea name="message" id="id" cols="100" rows="40"></textarea>
+        <textarea name="message" id="id" cols="120" rows="35"></textarea>
         <br><br>
         <input type="submit" value="submit" />
     </form>
