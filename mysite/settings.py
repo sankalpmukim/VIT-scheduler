@@ -27,7 +27,7 @@ SECRET_KEY = '2jyq0k1-ye2pi62p0h&z3*wtmxdpuowz2&=3shw-207+rfh#d%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['v-scheduler-django-trial.sankalpmukim.repl.co','41b358d8-0900-4f58-a84b-b1dd4c33f06d.id.repl.co']
+ALLOWED_HOSTS = []
 
 
 # Application definition
