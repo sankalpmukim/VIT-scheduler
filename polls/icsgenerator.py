@@ -89,12 +89,13 @@ def generate_calendar(whole_site_data: str):
         description = course[4].split('-')[1][1:]
         slots = course[15][:-2].split('+')
         year = 2021
-        month = 2
+        month = 7
         duration = timedelta(minutes=45)
-        until = datetime(2021, 6, 19)
+        until = datetime(2021, 12, 13)
         location = course[-13]+'('+course[20][:-2]+')'
         for slot in slots:
             for clas in slotinfo[slot]:
+                clas[1]-=20
                 event = build_event_duration(summary, description, datetime(
                     year, month, clas[1], clas[0][0], clas[0][1]), duration, location, freq_of_recurrence='weekly', until=until)
                 if not('roject' in summary):
