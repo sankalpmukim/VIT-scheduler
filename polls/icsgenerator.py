@@ -89,7 +89,7 @@ def generate_calendar(whole_site_data: str):
         description = course[4].split('-')[1][1:]
         slots = course[15][:-2].split('+')
         year = 2021
-        month = 7
+        month = 8
         duration = timedelta(minutes=45)
         until = datetime(2021, 12, 13)
         location = course[-13]+'('+course[20][:-2]+')'
